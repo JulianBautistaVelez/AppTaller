@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>
+                Disponible en Banco:
+            </h2>
+        </div>
+        <div class="col-md-4">
+            <h1>
+                {{ dinero.banco | currency: "€" }}
+            </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2>
+            Disponible en Caja:
+            </h2>
+        </div>
+        <div class="col-md-4">
+            <h1>
+            {{ dinero.caja | currency: "€" }}
+            </h1>
+        </div>
+    </div>
+</div>

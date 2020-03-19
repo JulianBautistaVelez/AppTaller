@@ -10,10 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class DineroService {
 
+  baseUrl = Globals.baseUrl + Globals.dinero;
   constructor(private http:HttpClient) { }
 
   getDinero():Observable<Dinero>{
-    var url = Globals.baseUrl + Globals.getDineroUrl;
-    return this.http.get<Dinero>(url);
+    var endPoint = this.baseUrl + Globals.getDineroActual;
+    return this.http.get<Dinero>(endPoint);
   }
 }

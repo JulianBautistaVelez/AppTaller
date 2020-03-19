@@ -15,7 +15,6 @@ export class VerDineroComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getDinero().subscribe(dineroResponse => this.dinero = dineroResponse);
-    console.log(this.dinero);
   }
 
 }

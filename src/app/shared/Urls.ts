@@ -1,4 +1,4 @@
-export enum Globals {
+export enum Urls {
     baseUrl = "http://localhost:8080/",
 
     /* DINERO */

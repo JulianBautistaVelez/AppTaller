@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-import { Dinero } from 'src/app/model/Dinero';
-import { Globals } from 'src/app/shared/Globals';
+import { Dinero } from 'src/app/model/dinero/Dinero';
+import { Urls } from 'src/app/shared/Urls';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,11 +9,11 @@ import { Observable } from 'rxjs';
 })
 export class DineroService {
 
-  baseUrl = Globals.baseUrl + Globals.dinero;
+  baseUrl = Urls.baseUrl + Urls.dinero;
   constructor(private http:HttpClient) { }
 
   getDinero():Observable<Dinero>{
-    var endPoint = this.baseUrl + Globals.getDineroActual;
+    var endPoint = this.baseUrl + Urls.getDineroActual;
     return this.http.get<Dinero>(endPoint);
   }
 }

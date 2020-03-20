@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Cliente } from 'src/app/model/Cliente';
-import { Globals } from 'src/app/shared/Globals';
+import { Urls } from 'src/app/shared/Urls';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,11 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class ClienteService {
 
-  baseUrl = Globals.baseUrl + Globals.cliente;
+  baseUrl = Urls.baseUrl + Urls.cliente;
   constructor(private http:HttpClient) {  }
 
   getClientes():Observable<Cliente[]>{
-    var endPoint = this.baseUrl + Globals.getTodos;
+    var endPoint = this.baseUrl + Urls.getTodos;
     return this.http.get<Cliente[]>(endPoint);
   }
 }

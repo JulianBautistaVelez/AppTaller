@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DineroService } from 'src/app/services/dinero/dinero.service';
-import { Dinero } from 'src/app/model/Dinero';
+import { Dinero } from 'src/app/model/dinero/Dinero';
 
 @Component({
   selector: 'app-ver-dinero',
@@ -14,7 +14,11 @@ export class VerDineroComponent implements OnInit {
   constructor(private service:DineroService) { }
 
   ngOnInit(): void {
-    this.service.getDinero().subscribe(dineroResponse => this.dinero = dineroResponse);
+    this.getDinero();
+  }
+
+  getDinero(){
+    this.service.getDinero().subscribe((dineroResponse:Dinero) => this.dinero = dineroResponse);
   }
 
 }

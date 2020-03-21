@@ -23,6 +23,8 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ListarMovimientosComponent } from './components/movimiento/listar-movimientos/listar-movimientos.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { InsertFacturaComponent } from './components/factura/insert-factura/insert-factura.component';
+import { ListarFacturasComponent } from './components/factura/listar-facturas/listar-facturas.component';
 
 
 
@@ -35,6 +37,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     PagInicialComponent,
     InsertMovimientoComponent,
     ListarMovimientosComponent,
+    InsertFacturaComponent,
+    ListarFacturasComponent,
   ],
   imports: [
     BrowserModule,

@@ -20,17 +20,20 @@ export class ListarMovimientosComponent implements OnInit {
   ]
   datosFecha:FormGroup;
   fechaActual = new Date();
-  fechaInicioMes = new Date().setDate(1);
+  fechaInicioMes = new Date(
+    this.fechaActual.getFullYear(), 
+    this.fechaActual.getMonth(), 
+    1);
   rangoFechas:RangoFechaClass;
   
   constructor(private service:MovimientoService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.fechaInicioMes.setDate(1);
     this.datosFecha = this.fb.group({
       fechaInicio: new FormControl(this.fechaInicioMes),
       fechaFin: new FormControl(this.fechaActual)
     })
-    this.rangoFechas = new RangoFechaClass(this.datosFecha.value);
     this.getMovimientos();
   }
 
@@ -52,25 +55,25 @@ export class ListarMovimientosComponent implements OnInit {
   }
 
   getMovimientos(){
-    this.service.getMovimientos().subscribe(
-      (data:MovimientoClass[]) => {
-        this.tableData = data;
-        console.log(data);
-      }
+    this.rangoFechas = new RangoFechaClass(this.datosFecha.value);
+    this.service.getMovimientos(this.rangoFechas).subscribe(
+      (data:MovimientoClass[]) =>  this.tableData = data
     )
     
   }
 
   getGastos(){
-    // this.service.getGastos().subscribe(
-    //   (data:MovimientoClass[]) => this.tableData = data
-    // )
+    this.rangoFechas = new RangoFechaClass(this.datosFecha.value);
+    this.service.getGastos(this.rangoFechas).subscribe(
+      (data:MovimientoClass[]) => this.tableData = data
+    )
   }
 
   getIngresos(){
-    // this.service.getIngresos().subscribe(
-    //   (data:MovimientoClass[]) => this.tableData = data
-    // )
+    this.rangoFechas = new RangoFechaClass(this.datosFecha.value);
+    this.service.getIngresos(this.rangoFechas).subscribe(
+      (data:MovimientoClass[]) => this.tableData = data
+    )
   }
 
 }

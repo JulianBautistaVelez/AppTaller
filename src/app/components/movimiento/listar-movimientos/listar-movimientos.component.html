@@ -1,36 +1,41 @@
 <div *ngIf="tableData">
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+  <div class="container">
+    <div class="row pb-1">
+      <div class="col-4">
         <button
-          class="btn btn-outline-success my-2 my-sm-0"
+          class="btn btn-outline-success"
           (click)="getMovimientos()"
           type="submit"
         >
           Ver todos los movimientos
         </button>
-      </li>
-      <li class="nav-item">
+      </div>
+
+      <div class="col-4">
         <button
-          class="btn btn-outline-success my-2 my-sm-0"
+          class="btn btn-outline-success"
           (click)="getIngresos()"
           type="submit"
         >
           Ver los ingresos
         </button>
-      </li>
-      <li class="nav-item">
+      </div>
+
+      <div class="col-4">
         <button
-          class="btn btn-outline-success my-2 my-sm-0"
+          class="btn btn-outline-success"
           (click)="getGastos()"
           type="submit"
         >
           Ver los gastos
         </button>
-      </li>
-    </ul>
-  </nav>
-  <div class="container">
+      </div>
+
+    </div>
+  
+    
+ 
+  
     <div class="row">
       <form [formGroup]="datosFecha">
         <div class="col-sm-4">

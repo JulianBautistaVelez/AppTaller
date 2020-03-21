@@ -5,6 +5,7 @@ import { Urls } from 'src/app/shared/Urls';
 import { Observable } from 'rxjs';
 import { MovimientoClass } from 'src/app/model/movimiento/MovimientoClass';
 import { RangoFechaClass } from 'src/app/model/shared/RangoFechaClass';
+import { TipoMovimiento } from 'src/app/shared/TipoMovimiento';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ import { RangoFechaClass } from 'src/app/model/shared/RangoFechaClass';
 export class MovimientoService {
 
   baseUrl = Urls.baseUrl + Urls.movimiento;
+  
   constructor(private http:HttpClient) { }
 
   inserMovimiento(movimiento:MovimientoClass):Observable<any>{
@@ -19,17 +21,27 @@ export class MovimientoService {
     return this.http.post(endPoint, movimiento);
   }
 
-  getMovimientos():Observable<MovimientoClass[]>{
-    var endPoint = this.baseUrl + Urls.getTodos;
-    return this.http.get<MovimientoClass[]>(endPoint);
+  getMovimientos(fechas:RangoFechaClass):Observable<MovimientoClass[]>{
+    var endPoint = this.baseUrl + Urls.getTodos + Urls.getRangeOfTime;
+    return this.http.post<MovimientoClass[]>(endPoint, fechas);
   }
 
-  getGastos(){
-    //TODO implementar :)
+  getGastos(fechas:RangoFechaClass):Observable<MovimientoClass[]>{
+    return this.getMovimientosByTipoRangeOfTime(TipoMovimiento.gasto, fechas);
   }
 
-  getIngresos(){
-    //TODO implementar :)
+  getIngresos(fechas:RangoFechaClass):Observable<MovimientoClass[]>{
+    return this.getMovimientosByTipoRangeOfTime(TipoMovimiento.ingreso, fechas);
+  }
+
+  getMovimientosByTipoRangeOfTime(tipo:TipoMovimiento, fechas:RangoFechaClass){
+    var gastoIngreso = tipo === TipoMovimiento.gasto? Urls.getGastos: Urls.getIngresos;
+    var endPoint = 
+      this.baseUrl +
+      Urls.getTodos + 
+      gastoIngreso + 
+      Urls.getRangeOfTime;
+    return this.http.post<MovimientoClass[]>(endPoint, fechas);
   }
 
 }

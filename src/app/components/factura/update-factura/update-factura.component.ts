@@ -90,7 +90,7 @@ export class UpdateFacturaComponent implements OnInit {
     return this.factDatos.get('filas') as FormArray
   }
 
-  addProducto(fila:any){
+  addProducto(fila?){
     const compra= this.fb.group({
       unidades: ["",[
         Validators.pattern('^[0-9]+(\[0-9])?$'),
@@ -119,7 +119,7 @@ export class UpdateFacturaComponent implements OnInit {
           compra.get('valor').value * x
         )
       );
-    compra.patchValue(fila);
+    if(fila != null){compra.patchValue(fila);}
     this.productoForms.push(compra)
   }
 

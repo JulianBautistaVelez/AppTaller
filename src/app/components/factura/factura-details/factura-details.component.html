@@ -1,0 +1,125 @@
+<div *ngIf="factura" class="container">
+    <div id="contentToPrint">
+        <div class="row pb-5 pt-5">
+            <div class="col-4 offset-1">
+                <img src="assets/logo400_400.jpg" />
+            </div>
+
+            <div class="col-5 offset-1"> 
+                <table class="table table-sm">
+                    <tbody>
+                    <tr>
+                        <th scope="row">Factura número: </th>
+                        <td>{{factura.numeroIdentificador}}/{{factura.fecha | date: "yyyy" }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Fecha: </th>
+                        <td>{{factura.fecha | date}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Nombre: </th>
+                        <td>Nombre de Prueba </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Domicilio: </th>
+                        <td>Calle de Prueba 12 bajo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">C.P/Provinicia: </th>
+                        <td>46000/Valencia</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">N.I.F. : </th>
+                        <td>2222222E</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Teléfono: </th>
+                        <td>111 11 11 11</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row pb-5">
+            <div class="col-8 offset-1"> 
+                <table class="table table-sm">
+                    <tbody>
+                    <tr>
+                        <th scope="row">Cliente: </th>
+                        <td>{{factura.nombre}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">N.I.F. : </th>
+                        <td>{{factura.nif}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Domicilio: </th>
+                        <td>{{factura.direccion}} </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">C.P./Provinicia: </th>
+                        <td>{{factura.cpProvincia}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row pb-5">
+            <div class="col-10 offset-1"> 
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                        <th scope="col">Unidades</th>
+                        <th scope="col">Concepto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let fila of factura.filas">
+                        <td>{{fila.unidades}}</td>
+                        <td>{{fila.concepto}}</td>
+                        <td>{{fila.valor | currency: "€"}}</td>
+                        <td>{{fila.valorTotal | currency: "€"}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <th scope="row">SUMA: </th>
+                        <td>{{factura.base | currency: "€"}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <th scope="row">IVA: </th>
+                        <td>{{factura.iva | currency: "€"}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <th scope="row">SUMA TOTAL: </th>
+                        <td>{{factura.total | currency: "€"}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="factura" class="row">
+    <div class="col-3 offset-1">
+        <button class="btn btn-danger" (click)="printScreen()">Eliminar</button>
+    </div>
+    <div class="col-3 offset-1">
+        <a class="btn btn-warning" 
+            [title]="factura.nombre +' update'" 
+            [routerLink]="['/facturas/edit/', factura.facturaId]" >
+            Editar
+        </a>
+    </div>
+    <div class="col-3 offset-1">
+        <button class="btn btn-success" (click)="printScreen()">Imprimir</button>
+    </div>
+</div>

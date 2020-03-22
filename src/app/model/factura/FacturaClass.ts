@@ -1,8 +1,13 @@
 export class FacturaClass{
     fecha:Date;
+    numeroIdentificador:Number;
     nombre:String;
+    nif:String;
     direccion:String;
     cpProvincia:String;
+    base:Number;
+    iva:Number;
+    total:Number;
     filas:{
         concepto:String,
         valor:Number,

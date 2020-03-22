@@ -1,5 +1,5 @@
-<div class="container">
-    <h3>Crear factura</h3>
+<div *ngIf="factDatos.value" class="container">
+    <h3>Editar factura</h3>
     <mat-vertical-stepper [linear]="isLinear" #stepper>
         <mat-step [stepControl]="factDatos">
             <form [formGroup]="factDatos">
@@ -9,7 +9,10 @@
                 </mat-form-field>
                 <br>
                 <mat-form-field>
-                    <input matInput [matDatepicker]="picker" formControlName="fecha" placeholder="Fecha de la factura">
+                    <input matInput 
+                        [matDatepicker]="picker"
+                        formControlName="fecha" 
+                        placeholder="Fecha de la factura">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker touchUi #picker></mat-datepicker>
                 </mat-form-field>

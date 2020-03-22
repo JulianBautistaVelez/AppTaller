@@ -1,26 +1,37 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { FacturaService } from 'src/app/services/factura/factura.service';
-import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { FacturaClass } from 'src/app/model/factura/FacturaClass';
 
 @Component({
-  selector: 'app-insert-factura',
-  templateUrl: './insert-factura.component.html',
-  styleUrls: ['./insert-factura.component.css']
+  selector: 'app-update-factura',
+  templateUrl: './update-factura.component.html',
+  styleUrls: ['./update-factura.component.css']
 })
-export class InsertFacturaComponent implements OnInit {
+export class UpdateFacturaComponent implements OnInit {
 
+  id:String;
   isLinear = false;
 
   factDatos:FormGroup;
   clientDatos: FormGroup;
   compraDatos: FormGroup;
   productoForm: FormGroup;
-
-  constructor(private service:FacturaService, private fb:FormBuilder) { }
+  
+  constructor(
+    private service:FacturaService, 
+    private fb:FormBuilder,
+    private route:ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
+    this.initializeForm();
+    this.getRouteID();
+    this.getFacturaById();
+  }
+
+  initializeForm(){
     this.factDatos = this.fb.group({
       nombre:null,
       nif:null,
@@ -33,8 +44,27 @@ export class InsertFacturaComponent implements OnInit {
         Validators.required
       ]],
       fecha: ['', Validators.required],
-      filas: this.fb.array([])
+      filas: this.fb.array([]),
     });
+  }
+
+  getRouteID(){
+    this.route.paramMap.subscribe(
+      params => {
+        this.id = params.get('facturaId');
+      }
+    )
+  }
+
+  getFacturaById(){
+    this.service.getFacturaById(this.id).subscribe(
+      (data:FacturaClass) => {
+        this.factDatos.patchValue(data);
+        data.filas.forEach(fila => {
+          this.addProducto(fila)
+        });
+      }
+    );
   }
 
   get numeroIdentificador(){
@@ -60,7 +90,7 @@ export class InsertFacturaComponent implements OnInit {
     return this.factDatos.get('filas') as FormArray
   }
 
-  addProducto(){
+  addProducto(fila:any){
     const compra= this.fb.group({
       unidades: ["",[
         Validators.pattern('^[0-9]+(\[0-9])?$'),
@@ -89,7 +119,7 @@ export class InsertFacturaComponent implements OnInit {
           compra.get('valor').value * x
         )
       );
-
+    compra.patchValue(fila);
     this.productoForms.push(compra)
   }
 
@@ -99,8 +129,9 @@ export class InsertFacturaComponent implements OnInit {
 
   async submitHandler() {
     var factura = new FacturaClass(this.factDatos.value);
-    this.service.insertFactura(factura).subscribe(
+    this.service.updateFactura(factura, this.id).subscribe(
       data => console.log(data)
     );
   }
+
 }

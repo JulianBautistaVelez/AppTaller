@@ -25,6 +25,8 @@ import { ListarMovimientosComponent } from './components/movimiento/listar-movim
 import { MatNativeDateModule } from '@angular/material/core';
 import { InsertFacturaComponent } from './components/factura/insert-factura/insert-factura.component';
 import { ListarFacturasComponent } from './components/factura/listar-facturas/listar-facturas.component';
+import { FacturaDetailsComponent } from './components/factura/factura-details/factura-details.component';
+import { UpdateFacturaComponent } from './components/factura/update-factura/update-factura.component';
 
 
 
@@ -39,6 +41,8 @@ import { ListarFacturasComponent } from './components/factura/listar-facturas/li
     ListarMovimientosComponent,
     InsertFacturaComponent,
     ListarFacturasComponent,
+    FacturaDetailsComponent,
+    UpdateFacturaComponent,
   ],
   imports: [
     BrowserModule,

@@ -29,7 +29,6 @@ export class ListarMovimientosComponent implements OnInit {
   constructor(private service:MovimientoService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
-    this.fechaInicioMes.setDate(1);
     this.datosFecha = this.fb.group({
       fechaInicio: new FormControl(this.fechaInicioMes),
       fechaFin: new FormControl(this.fechaActual)
@@ -66,14 +65,14 @@ export class ListarMovimientosComponent implements OnInit {
     this.rangoFechas = new RangoFechaClass(this.datosFecha.value);
     this.service.getGastos(this.rangoFechas).subscribe(
       (data:MovimientoClass[]) => this.tableData = data
-    )
+    );
   }
 
   getIngresos(){
     this.rangoFechas = new RangoFechaClass(this.datosFecha.value);
     this.service.getIngresos(this.rangoFechas).subscribe(
       (data:MovimientoClass[]) => this.tableData = data
-    )
+    );
   }
 
 }

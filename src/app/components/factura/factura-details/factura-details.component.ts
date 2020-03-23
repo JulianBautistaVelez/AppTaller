@@ -51,8 +51,13 @@ export class FacturaDetailsComponent implements OnInit {
 
   }
 
-  editFactura(){
-
+  deleteFactura(){
+    if(confirm("¿Seguro desea eliminar la factura "+ this.factura.numeroIdentificador + " ?")) {
+      this.service.deleteFactura(this.id).subscribe(
+        data => console.log(data)
+      );
+    }
   }
+
 
 }

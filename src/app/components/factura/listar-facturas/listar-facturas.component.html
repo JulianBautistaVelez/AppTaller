@@ -1,6 +1,21 @@
 <div *ngIf="tableData">
     <div class="container">
-
+      <div class="row">
+        <div class="col-6 p-1">
+          <a [routerLink]="['']">
+            <div class="alert alert-danger" role="alert">
+                <h3 class="card-title">Regresar</h3>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 p-1">
+          <a [routerLink]="['insert']">
+            <div class="alert alert-primary" role="alert">
+                <h3 class="card-title">Crear factura</h3>
+              </div>
+          </a>
+        </div>
+      </div>
       <div class="row">
         <form [formGroup]="datosFecha">
           <div class="col-sm-4">

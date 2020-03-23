@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { gastosFrecuentes, ingresosFrecuentes } from 'src/app/shared/ConceptosFrecuentes';
 import { MovimientoService } from 'src/app/services/movimiento/movimiento.service';
 import { MovimientoClass } from 'src/app/model/Movimiento/MovimientoClass';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-insert-movimiento',
@@ -18,9 +19,15 @@ export class InsertMovimientoComponent implements OnInit {
 
   constructor(
     private fb:FormBuilder,
-    private service:MovimientoService) { }
+    private service:MovimientoService,
+    private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(
+      params => {
+        this.tipoMovimiento = params.get('tipo');
+      }
+    )
     this.form = this.fb.group({
       valor:[null,[
         Validators.required,

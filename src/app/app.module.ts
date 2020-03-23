@@ -27,6 +27,7 @@ import { InsertFacturaComponent } from './components/factura/insert-factura/inse
 import { ListarFacturasComponent } from './components/factura/listar-facturas/listar-facturas.component';
 import { FacturaDetailsComponent } from './components/factura/factura-details/factura-details.component';
 import { UpdateFacturaComponent } from './components/factura/update-factura/update-factura.component';
+import { MenuPrincipalComponent } from './components/menu-principal/menu-principal.component';
 
 
 
@@ -43,6 +44,7 @@ import { UpdateFacturaComponent } from './components/factura/update-factura/upda
     ListarFacturasComponent,
     FacturaDetailsComponent,
     UpdateFacturaComponent,
+    MenuPrincipalComponent,
   ],
   imports: [
     BrowserModule,

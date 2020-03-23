@@ -21,8 +21,12 @@ export class FacturaService {
 
   updateFactura(factura:FacturaClass, id:String):Observable<any>{
     var endPoint = this.baseUrl + Urls.updateById + id;
-    console.log(factura);
     return this.http.put(endPoint, factura);
+  }
+
+  deleteFactura(id:String):Observable<any>{
+    var endPoint = this.baseUrl + Urls.deleteById + id;
+    return this.http.delete(endPoint);
   }
 
   getFacturas(fechas:RangoFechaClass):Observable<FacturaClass[]>{

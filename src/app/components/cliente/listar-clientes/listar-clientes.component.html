@@ -1,0 +1,21 @@
+
+<div class="row sticky-top tex-center">
+  <div class="col-12 bg-primary text-white w-100 pt-1 pb-1">
+    <a class="deco-none" [routerLink]="['./insert']">Insertar cliente</a>
+  </div>
+</div>
+<div *ngIf="clientes" class="container">
+  <div  class="col-10 mx-auto pt-3" *ngFor="let cliente of clientes">
+    
+    <mat-card class="p-2">
+      <a class="deco-none" [title]="cliente.nombre +' update'" 
+      [routerLink]="['/clientes/update', cliente.clienteId]">
+        <mat-card-title>Cliente: {{cliente.nombre}}</mat-card-title>	
+        <mat-card-subtitle>{{cliente.direccion | uppercase}}</mat-card-subtitle>
+        <mat-card-content>Teléfono: {{cliente.telefono}}</mat-card-content>
+        <mat-card-content>{{cliente.comentarios}}	</mat-card-content>
+      </a>
+    </mat-card>
+    
+  </div>
+  

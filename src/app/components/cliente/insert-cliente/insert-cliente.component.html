@@ -1,0 +1,48 @@
+  
+  <form class="pt-3" [formGroup]="form">
+    <div class="row text-center">
+
+      <div class="col-6 mx-auto">
+        <h2>INSERTAR CLIENTE</h2>
+      </div>
+      
+      <div class="col-8 mx-auto">
+        <mat-form-field>
+          
+            <input matInput formControlName="nombre" type="text" placeholder="Nombre">
+            <mat-error *ngIf="nombre.invalid && nombre.touched">Es obligatorio indicar un nombre</mat-error>
+          
+        </mat-form-field>
+      </div>
+    
+      <div class="col-8 mx-auto">
+        <mat-form-field>
+          
+          <input matInput formControlName="direccion" type="text" placeholder="Dirección">
+          
+        </mat-form-field>
+      </div>
+    
+      <div class="col-8 mx-auto">
+        <mat-form-field>
+          
+          <span matPrefix>+34 &nbsp;</span>
+          <input matInput formControlName="telefono" type="tel" placeholder="Teléfono">
+          
+        </mat-form-field>
+      </div>
+    
+    
+      <div class="col-8 mx-auto">
+        <mat-form-field>
+          
+          <textarea matInput formControlName="comentarios" placeholder="Comentarios"></textarea>
+    
+        </mat-form-field>
+      </div>
+    
+      <div class="col-8 mx-auto">
+        <button mat-raised-button [disabled]="form.invalid" color="primary" (click)="submitHandler(form)">validar</button>
+      </div>
+    </div>
+    </form>

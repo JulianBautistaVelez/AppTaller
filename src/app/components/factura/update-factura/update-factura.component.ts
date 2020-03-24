@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { FacturaService } from 'src/app/services/factura/factura.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FacturaClass } from 'src/app/model/factura/FacturaClass';
 
 @Component({
@@ -22,7 +22,8 @@ export class UpdateFacturaComponent implements OnInit {
   constructor(
     private service:FacturaService, 
     private fb:FormBuilder,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -130,7 +131,10 @@ export class UpdateFacturaComponent implements OnInit {
   async submitHandler() {
     var factura = new FacturaClass(this.factDatos.value);
     this.service.updateFactura(factura, this.id).subscribe(
-      data => console.log(data)
+      data => {
+        console.log(data);
+        this.router.navigate(['../facturas']);
+      }
     );
   }
 

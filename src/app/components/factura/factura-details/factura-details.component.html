@@ -1,11 +1,25 @@
+<div class="row sticky-top tex-center">
+    <div class="col-4 bg-danger text-white w-100 pt-1 pb-1">
+        <a class="deco-none" (click)="deleteFactura()">Eliminar</a>
+    </div>
+    <div class="col-4 bg-warning text-white w-100 pt-1 pb-1">
+        <a class="deco-none" [title]="factura.nombre +' update'" 
+        [routerLink]="['/facturas/edit/', factura.facturaId]">
+            Editar
+        </a>
+    </div>
+    <div class="col-4 bg-success text-white w-100 pt-1 pb-1">
+        <a class="deco-none" (click)="printScreen()">Imprimir</a>
+    </div>
+</div>
 <div *ngIf="factura" class="container">
     <div id="contentToPrint">
         <div class="row pb-5 pt-5">
             <div class="col-4 offset-1">
-                <img src="assets/logo400_400.jpg" />
+                <img class="img-fluid" src="assets/logo400_400.jpg" />
             </div>
 
-            <div class="col-5 offset-1"> 
+            <div class="col-5 "> 
                 <table class="table table-sm">
                     <tbody>
                     <tr>
@@ -106,20 +120,5 @@
                 </table>
             </div>
         </div>
-    </div>
-</div>
-<div *ngIf="factura" class="row">
-    <div class="col-3 offset-1">
-        <button class="btn btn-danger" (click)="deleteFactura()">Eliminar</button>
-    </div>
-    <div class="col-3 offset-1">
-        <a class="btn btn-warning" 
-            [title]="factura.nombre +' update'" 
-            [routerLink]="['/facturas/edit/', factura.facturaId]" >
-            Editar
-        </a>
-    </div>
-    <div class="col-3 offset-1">
-        <button class="btn btn-success" (click)="printScreen()">Imprimir</button>
     </div>
 </div>

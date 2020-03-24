@@ -6,6 +6,10 @@ import { InsertFacturaComponent } from './components/factura/insert-factura/inse
 import { UpdateFacturaComponent } from './components/factura/update-factura/update-factura.component';
 import { InsertMovimientoComponent } from './components/movimiento/insert-movimiento/insert-movimiento.component';
 import { ListarFacturasComponent } from './components/factura/listar-facturas/listar-facturas.component';
+import { ListarMovimientosComponent } from './components/movimiento/listar-movimientos/listar-movimientos.component';
+import { InsertClienteComponent } from './components/cliente/insert-cliente/insert-cliente.component';
+import { ListarClientesComponent } from './components/cliente/listar-clientes/listar-clientes.component';
+import { UpdateClienteComponent } from './components/cliente/update-cliente/update-cliente.component';
 
 
 const routes: Routes = [
@@ -14,7 +18,11 @@ const routes: Routes = [
   { path: 'facturas/insert', component: InsertFacturaComponent},
   { path: 'facturas/:facturaId', component: FacturaDetailsComponent},
   { path: 'facturas/edit/:facturaId', component: UpdateFacturaComponent},
-  { path: 'movimiento/insert/:tipo', component: InsertMovimientoComponent}
+  { path: 'movimientos', component: ListarMovimientosComponent},
+  { path: 'movimiento/insert/:tipo', component: InsertMovimientoComponent},
+  { path: 'clientes', component: ListarClientesComponent},
+  { path: 'clientes/insert', component: InsertClienteComponent},
+  { path: 'clientes/update/:clienteId', component: UpdateClienteComponent}
  
 ];
 

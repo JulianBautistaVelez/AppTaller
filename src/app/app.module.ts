@@ -28,6 +28,9 @@ import { ListarFacturasComponent } from './components/factura/listar-facturas/li
 import { FacturaDetailsComponent } from './components/factura/factura-details/factura-details.component';
 import { UpdateFacturaComponent } from './components/factura/update-factura/update-factura.component';
 import { MenuPrincipalComponent } from './components/menu-principal/menu-principal.component';
+import { InsertClienteComponent } from './components/cliente/insert-cliente/insert-cliente.component';
+import { ListarClientesComponent } from './components/cliente/listar-clientes/listar-clientes.component';
+import { UpdateClienteComponent } from './components/cliente/update-cliente/update-cliente.component';
 
 
 
@@ -45,6 +48,9 @@ import { MenuPrincipalComponent } from './components/menu-principal/menu-princip
     FacturaDetailsComponent,
     UpdateFacturaComponent,
     MenuPrincipalComponent,
+    InsertClienteComponent,
+    ListarClientesComponent,
+    UpdateClienteComponent,
   ],
   imports: [
     BrowserModule,

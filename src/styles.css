@@ -1,13 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-body{
-    margin: 0px;
-}
-.container{
-    padding:1em;
-}
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.alert {
-    padding:0.2em; 
+
+.content { 
+    min-height: 100hv;
+    margin-bottom: 10em;
  }
+
+a.deco-none {
+    color: inherit;
+    text-decoration:none;
+}
+.bg-coral {
+    background-color: coral;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.bg-golden {
+    background-color: DarkGoldenRod;
+}
+
+.bg-red {
+    background-color: DarkRed;
+}
+
+.bg-orange {
+    background-color: DarkOrange;
+}
+
+.menu-font{
+    font-size: 14px;
+}
+
+.main-footer{     
+    position: sticky; 
+    bottom: 0em;
+}

@@ -1,44 +1,22 @@
-<div *ngIf="tableData">
-  <div class="container">
-    <div class="row pb-1">
-      <div class="col-4">
-        <button
-          class="btn btn-outline-success"
-          (click)="getMovimientos()"
-          type="submit"
-        >
-          Ver todos los movimientos
-        </button>
-      </div>
+<div class="row sticky-top tex-center pb-2">
+  <div class="col-4 bg-danger text-white w-100 pt-1 pb-1">
+      <a class="deco-none" (click)="getGastos()">Gastos</a>
+  </div>
+  <div class="col-4 bg-warning text-white w-100 pt-1 pb-1">
+      <a class="deco-none" (click)="getMovimientos()">
+          Todos
+      </a>
+  </div>
+  <div class="col-4 bg-success text-white w-100 pt-1 pb-1">
+      <a class="deco-none" (click)="getIngresos()">Ingresos</a>
+  </div>
+</div>
 
-      <div class="col-4">
-        <button
-          class="btn btn-outline-success"
-          (click)="getIngresos()"
-          type="submit"
-        >
-          Ver los ingresos
-        </button>
-      </div>
-
-      <div class="col-4">
-        <button
-          class="btn btn-outline-success"
-          (click)="getGastos()"
-          type="submit"
-        >
-          Ver los gastos
-        </button>
-      </div>
-
-    </div>
-  
-    
- 
-  
+<div class="p-3">
+  <div *ngIf="tableData">
     <div class="row">
       <form [formGroup]="datosFecha">
-        <div class="col-sm-4">
+        <div class="col-4 mx-auto">
           <mat-form-field>
             <input
               matInput
@@ -54,7 +32,7 @@
             <mat-datepicker touchUi #pickerInicio></mat-datepicker>
           </mat-form-field>
         </div>
-        <div class="col-sm-4">
+        <div class="col-4 mx-auto">
           <mat-form-field>
             <input
               matInput
@@ -71,7 +49,10 @@
           </mat-form-field>
         </div>
       </form>
-      <div class="col-md-8">
+    </div>
+
+    <div class="row">
+      <div class="col-8">
         <!----------------------------------------------------------------------------------->
         <table mat-table [dataSource]="tableData" class="mat-elevation-z8">
           <!--- Note that these columns can be defined in any order.
@@ -108,14 +89,14 @@
   
           <!--Columna destino-->
           <ng-container matColumnDef="Origen/Destino">
-            <th mat-header-cell *matHeaderCellDef>Origen/Destino</th>
+            <th mat-header-cell *matHeaderCellDef>Caja/Banco</th>
             <td mat-cell *matCellDef="let movimiento">
               {{ movimiento.cajaBanco }}
             </td>
             <td mat-footer-cell *matFooterCellDef></td>
           </ng-container>
   
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns "></tr>
           <tr
             mat-row
             *matRowDef="let row; columns: displayedColumns"

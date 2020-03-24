@@ -1,21 +1,10 @@
-<form  [formGroup]="form"> 
-    <div class="row">
-
-      <div class="col-12 p-1">
-        <a [routerLink]="['']">
-          <div class="alert alert-danger" role="alert">
-              <h3 class="card-title">Regresar</h3>
-          </div>
-        </a>
+<form class="pt-3" [formGroup]="form"> 
+    <div class="row text-center">
+      
+      <div class="col-6 mx-auto">
+        <h2>{{tipoMovimiento|uppercase}}</h2>
       </div>
       
-      <div class="col-12">
-        <h2>
-          <p class="text-center">
-            {{tipoMovimiento|uppercase}}
-          </p>
-        </h2>
-      </div>
       <div class="col-8 mx-auto">
         <mat-form-field>
             <input matInput formControlName="valor" type="currency" placeholder="Cantidad (max 2 decimales)">

@@ -10,6 +10,9 @@ import { ListarMovimientosComponent } from './components/movimiento/listar-movim
 import { InsertClienteComponent } from './components/cliente/insert-cliente/insert-cliente.component';
 import { ListarClientesComponent } from './components/cliente/listar-clientes/listar-clientes.component';
 import { UpdateClienteComponent } from './components/cliente/update-cliente/update-cliente.component';
+import { InsertTelaComponent } from './components/tela/insert-tela/insert-tela.component';
+import { ListarTelasComponent } from './components/tela/listar-telas/listar-telas.component';
+import { UpdateTelaComponent } from './components/tela/update-tela/update-tela.component';
 
 
 const routes: Routes = [
@@ -22,7 +25,10 @@ const routes: Routes = [
   { path: 'movimiento/insert/:tipo', component: InsertMovimientoComponent},
   { path: 'clientes', component: ListarClientesComponent},
   { path: 'clientes/insert', component: InsertClienteComponent},
-  { path: 'clientes/update/:clienteId', component: UpdateClienteComponent}
+  { path: 'clientes/update/:clienteId', component: UpdateClienteComponent},
+  { path: 'telas', component: ListarTelasComponent},
+  { path: 'telas/insert', component: InsertTelaComponent},
+  { path: 'telas/update/:telaId', component: UpdateTelaComponent},
  
 ];
 

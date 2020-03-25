@@ -22,6 +22,7 @@ export enum Urls {
 
     /* TELA */
     tela = "telas/",
+    getByQuery = "search",
 
     /* MOVIMIENTO */
     movimiento = "movimientos/",

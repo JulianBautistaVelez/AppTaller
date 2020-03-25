@@ -17,7 +17,7 @@ export class MovimientoService {
   constructor(private http:HttpClient) { }
 
   inserMovimiento(movimiento:MovimientoClass):Observable<any>{
-    var endPoint = this.baseUrl + Urls.insert
+    var endPoint = this.baseUrl + Urls.insert;
     return this.http.post(endPoint, movimiento);
   }
 
@@ -42,6 +42,11 @@ export class MovimientoService {
       gastoIngreso + 
       Urls.getRangeOfTime;
     return this.http.post<MovimientoClass[]>(endPoint, fechas);
+  }
+
+  deleteMovimiento(id:String):Observable<any>{
+    var endPoint = this.baseUrl + Urls.deleteById + id;
+    return this.http.delete(endPoint);
   }
 
 }

@@ -32,7 +32,7 @@ export class ListarMovimientosComponent implements OnInit {
     this.datosFecha = this.fb.group({
       fechaInicio: new FormControl(this.fechaInicioMes),
       fechaFin: new FormControl(this.fechaActual)
-    })
+    });
     this.getMovimientos();
   }
 
@@ -40,7 +40,8 @@ export class ListarMovimientosComponent implements OnInit {
     var suma = 0;
     var arrDatos = Object.keys(this.tableData).map(i => this.tableData[i]);
     arrDatos.forEach(mov => {
-      suma += parseFloat(mov["valor"]);
+      let sumRest = mov['tipo'] === 'gasto'? -1:1;
+      suma += parseFloat(mov["valor"]) * sumRest;
     });
 
     return suma;
@@ -57,7 +58,7 @@ export class ListarMovimientosComponent implements OnInit {
     this.rangoFechas = new RangoFechaClass(this.datosFecha.value);
     this.service.getMovimientos(this.rangoFechas).subscribe(
       (data:MovimientoClass[]) =>  this.tableData = data
-    )
+    );
     
   }
 

@@ -34,9 +34,8 @@ import { UpdateClienteComponent } from './components/cliente/update-cliente/upda
 import { ListarTelasComponent } from './components/tela/listar-telas/listar-telas.component';
 import { InsertTelaComponent } from './components/tela/insert-tela/insert-tela.component';
 import { UpdateTelaComponent } from './components/tela/update-tela/update-tela.component';
-
-
-
+import { LiquidezChartComponent } from './components/charts/liquidez-chart/liquidez-chart.component';
+import { GastosIngresosChartComponent } from './components/charts/gastos-ingresos-chart/gastos-ingresos-chart.component';
 
 
 @NgModule({
@@ -57,6 +56,8 @@ import { UpdateTelaComponent } from './components/tela/update-tela/update-tela.c
     ListarTelasComponent,
     InsertTelaComponent,
     UpdateTelaComponent,
+    LiquidezChartComponent,
+    GastosIngresosChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +77,7 @@ import { UpdateTelaComponent } from './components/tela/update-tela/update-tela.c
     MatTableModule,
     MatStepperModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

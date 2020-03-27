@@ -45,14 +45,12 @@ export class LiquidezChartComponent implements OnInit {
               {
                 lineTension:0.1,
                 fill:'true',
-                backgroundColor: 'rgba(184, 134, 11,1)',
                 label: 'Banco',
                 data: bancoValues,
               },
               {
                 lineTension:0.1,
                 fill:'true',
-                backgroundColor: 'rgba(0, 100, 0,1)',
                 label: 'Caja',
                 data: cajaValues,
               }
@@ -77,7 +75,5 @@ export class LiquidezChartComponent implements OnInit {
       }
   });
   }
-
-  
 
 }

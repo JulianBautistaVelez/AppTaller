@@ -2,11 +2,11 @@ export enum Urls {
     baseUrl = "http://localhost:8080/",
 
     /* DINERO */
-    dinero = "dinero/",
+    dinero = "/dinero/",
     getDineroActual = "get-dinero-actual",
 
     /* CHARTS */
-    charts = "informacion/",
+    charts = "/informacion/",
     getLineChartData = "get-liquidez",
     getGastosPieChartData = "get-gastos",
     getIngresosPieChartData = "get-ingresos",
@@ -15,17 +15,17 @@ export enum Urls {
     /* COMPARTEN ENDPOINTS */
 
     /* CLIENTE */
-    cliente = "clientes/",
+    cliente = "/clientes/",
 
     /* FACTURA */
-    factura = "facturas/",
+    factura = "/facturas/",
 
     /* TELA */
-    tela = "telas/",
+    tela = "/telas/",
     getByQuery = "search",
 
     /* MOVIMIENTO */
-    movimiento = "movimientos/",
+    movimiento = "/movimientos/",
     getRangeOfTime ="rot",
     getGastos = "gasto/",
     getIngresos = "ingreso/",

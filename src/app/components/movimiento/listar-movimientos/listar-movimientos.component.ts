@@ -29,11 +29,15 @@ export class ListarMovimientosComponent implements OnInit {
   constructor(private service:MovimientoService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.intializeForm();
+    this.getMovimientos();
+  }
+
+  intializeForm(){
     this.datosFecha = this.fb.group({
       fechaInicio: new FormControl(this.fechaInicioMes),
       fechaFin: new FormControl(this.fechaActual)
     });
-    this.getMovimientos();
   }
 
   getTotalCost() {

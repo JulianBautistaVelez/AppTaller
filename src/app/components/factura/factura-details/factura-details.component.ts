@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef , ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FacturaClass } from 'src/app/model/factura/FacturaClass';
 import { FacturaService } from 'src/app/services/factura/factura.service';
 
@@ -15,7 +15,11 @@ export class FacturaDetailsComponent implements OnInit {
   factura:FacturaClass;
   id:String;
 
-  constructor(private route:ActivatedRoute, private service:FacturaService) { }
+  constructor(
+    private route:ActivatedRoute, 
+    private service:FacturaService,
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
     this.getRouteID();
@@ -54,7 +58,10 @@ export class FacturaDetailsComponent implements OnInit {
   deleteFactura(){
     if(confirm("¿Seguro desea eliminar la factura "+ this.factura.numeroIdentificador + " ?")) {
       this.service.deleteFactura(this.id).subscribe(
-        data => console.log(data)
+        data => {
+          console.log(data);
+          this.router.navigate(['']);
+        }
       );
     }
   }

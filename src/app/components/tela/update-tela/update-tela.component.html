@@ -15,83 +15,83 @@
         </div>
         
         <div class="col-8 mx-auto">
-        <mat-form-field>
-            <input
-            matInput
-            formControlName="nombre"
-            type="text"
-            placeholder="Nombre"
-            />
-            <mat-error *ngIf="nombre.invalid && nombre.touched"
-            >Es obligatorio un nombre</mat-error
-            >
-        </mat-form-field>
+            <mat-form-field>
+                <input
+                matInput
+                formControlName="nombre"
+                type="text"
+                placeholder="Nombre"
+                />
+                <mat-error *ngIf="nombre.invalid && nombre.touched"
+                >Es obligatorio un nombre</mat-error
+                >
+            </mat-form-field>
         </div>
 
         <div class="col-8 mx-auto">
-        <mat-form-field>
-            <input
-            matInput
-            formControlName="tipo"
-            placeholder="Tipo"
-            list="tipos"
-            />
-            <datalist id="tipos">
-                <option *ngFor="let tipoTela of tiposTela" value="{{tipoTela}}"></option>
-            </datalist>
-        </mat-form-field>
+            <mat-form-field>
+                <input
+                matInput
+                formControlName="tipo"
+                placeholder="Tipo"
+                list="tipos"
+                />
+                <datalist id="tipos">
+                    <option *ngFor="let tipoTela of tiposTela" value="{{tipoTela}}"></option>
+                </datalist>
+            </mat-form-field>
         </div>
 
         <div class="col-8 mx-auto">
-        <mat-form-field>
-            <input
-            matInput
-            formControlName="proveedor"
-            placeholder="Proveedor"
-            list="proveedores"
-            />
-            <datalist id="proveedores">
-                <option *ngFor="let proveedor of proveedoresTela" value="{{proveedor}}"></option>
-            </datalist>
-        </mat-form-field>
+            <mat-form-field>
+                <input
+                matInput
+                formControlName="proveedor"
+                placeholder="Proveedor"
+                list="proveedores"
+                />
+                <datalist id="proveedores">
+                    <option *ngFor="let proveedor of proveedoresTela" value="{{proveedor}}"></option>
+                </datalist>
+            </mat-form-field>
         </div>
 
         <div class="col-8 mx-auto">
-        <mat-form-field>
-            <input
-            matInput
-            formControlName="precioProveedor"
-            type="currency"
-            placeholder="Precio en el proveedor"
-            />
-            <mat-error *ngIf="precioProveedor.invalid && precioProveedor.touched"
-            >2 decimales como máximo</mat-error
-            >
-        </mat-form-field>
+            <mat-form-field>
+                <input
+                matInput
+                formControlName="precioProveedor"
+                type="currency"
+                placeholder="Precio en el proveedor"
+                />
+                <mat-error *ngIf="precioProveedor.invalid && precioProveedor.touched"
+                >2 decimales como máximo</mat-error
+                >
+            </mat-form-field>
         </div>
 
         <div class="col-8 mx-auto">
-        <mat-form-field>
-            <input
-            matInput
-            formControlName="precioCliente"
-            type="currency"
-            placeholder="PVP"
-            />
-            <mat-error *ngIf="precioCliente.invalid && precioCliente.touched"
-            >2 decimales como máximo</mat-error
-            >
-        </mat-form-field>
+            <mat-form-field>
+                <input
+                matInput
+                formControlName="precioCliente"
+                type="currency"
+                placeholder="PVP"
+                />
+                <mat-error *ngIf="precioCliente.invalid && precioCliente.touched"
+                >2 decimales como máximo</mat-error
+                >
+            </mat-form-field>
         </div>
 
         <div class="col-8 mx-auto">
-        <mat-form-field>
-            <textarea
-            matInput
-            formControlName="comentarios"
-            placeholder="Comentarios"
-            ></textarea>
-        </mat-form-field>
+            <mat-form-field>
+                <textarea
+                matInput
+                formControlName="comentarios"
+                placeholder="Comentarios"
+                ></textarea>
+            </mat-form-field>
         </div>
 
     </div>

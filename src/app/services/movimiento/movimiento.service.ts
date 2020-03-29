@@ -7,6 +7,7 @@ import { MovimientoClass } from 'src/app/model/movimiento/MovimientoClass';
 import { RangoFechaClass } from 'src/app/model/shared/RangoFechaClass';
 import { TipoMovimiento } from 'src/app/shared/TipoMovimiento';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,6 +20,11 @@ export class MovimientoService {
   inserMovimiento(movimiento:MovimientoClass):Observable<any>{
     var endPoint = this.baseUrl + Urls.insert;
     return this.http.post(endPoint, movimiento);
+  }
+
+  insertMultiMovimiento(movimientos:MovimientoClass[]):Observable<any>{
+    var endPoint = this.baseUrl + Urls.insert + Urls.insertMulti;
+    return this.http.post<any>(endPoint, movimientos);
   }
 
   getMovimientos(fechas:RangoFechaClass):Observable<MovimientoClass[]>{
@@ -42,6 +48,11 @@ export class MovimientoService {
       gastoIngreso + 
       Urls.getRangeOfTime;
     return this.http.post<MovimientoClass[]>(endPoint, fechas);
+  }
+
+  getMovimientoById(id:String):Observable<MovimientoClass>{
+    var endPoint = this.baseUrl + Urls.getById + id;
+    return this.http.get<MovimientoClass>(endPoint);
   }
 
   deleteMovimiento(id:String):Observable<any>{

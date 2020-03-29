@@ -36,6 +36,8 @@ import { InsertTelaComponent } from './components/tela/insert-tela/insert-tela.c
 import { UpdateTelaComponent } from './components/tela/update-tela/update-tela.component';
 import { LiquidezChartComponent } from './components/charts/liquidez-chart/liquidez-chart.component';
 import { GastosIngresosChartComponent } from './components/charts/gastos-ingresos-chart/gastos-ingresos-chart.component';
+import { TransferDineroComponent } from './components/dinero/transfer-dinero/transfer-dinero.component';
+import { MovimientoDetailsComponent } from './components/movimiento/movimiento-details/movimiento-details.component';
 
 
 @NgModule({
@@ -58,6 +60,8 @@ import { GastosIngresosChartComponent } from './components/charts/gastos-ingreso
     UpdateTelaComponent,
     LiquidezChartComponent,
     GastosIngresosChartComponent,
+    TransferDineroComponent,
+    MovimientoDetailsComponent,
   ],
   imports: [
     BrowserModule,

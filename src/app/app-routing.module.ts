@@ -13,16 +13,20 @@ import { UpdateClienteComponent } from './components/cliente/update-cliente/upda
 import { InsertTelaComponent } from './components/tela/insert-tela/insert-tela.component';
 import { ListarTelasComponent } from './components/tela/listar-telas/listar-telas.component';
 import { UpdateTelaComponent } from './components/tela/update-tela/update-tela.component';
+import { TransferDineroComponent } from './components/dinero/transfer-dinero/transfer-dinero.component';
+import { MovimientoDetailsComponent } from './components/movimiento/movimiento-details/movimiento-details.component';
 
 
 const routes: Routes = [
   { path: "", component: PagInicialComponent},
+  { path: 'dinero/transfer/:origen', component: TransferDineroComponent},
   { path: 'facturas', component: ListarFacturasComponent},
   { path: 'facturas/insert', component: InsertFacturaComponent},
   { path: 'facturas/:facturaId', component: FacturaDetailsComponent},
   { path: 'facturas/edit/:facturaId', component: UpdateFacturaComponent},
   { path: 'movimientos', component: ListarMovimientosComponent},
-  { path: 'movimiento/insert/:tipo', component: InsertMovimientoComponent},
+  { path: 'movimientos/insert/:tipo', component: InsertMovimientoComponent},
+  { path: 'movimientos/details/:movimientoId', component: MovimientoDetailsComponent},
   { path: 'clientes', component: ListarClientesComponent},
   { path: 'clientes/insert', component: InsertClienteComponent},
   { path: 'clientes/update/:clienteId', component: UpdateClienteComponent},

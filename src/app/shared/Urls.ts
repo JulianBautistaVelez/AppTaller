@@ -25,14 +25,15 @@ export enum Urls {
     getByQuery = "search",
 
     /* MOVIMIENTO */
-    movimiento = "/movimientos/",
+    movimiento = "movimientos/",
     getRangeOfTime ="rot",
     getGastos = "gasto/",
     getIngresos = "ingreso/",
+    insertMulti = "multiple",
 
     /* COMUNES */
     getTodos = "get/",
-    insert = "insert",
+    insert = "insert/",
     updateById = "update/",
     deleteById = "delete/",
     getById = "get/"

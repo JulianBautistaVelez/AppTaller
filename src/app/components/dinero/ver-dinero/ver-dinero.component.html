@@ -1,4 +1,5 @@
 <div *ngIf="dinero" class="container">
+    
     <div class="row">
         <div class="col-md-8">
             <h2>
@@ -7,11 +8,14 @@
         </div>
         <div class="col-md-4">
             <h1>
-                {{ dinero.banco | currency: "€" }}
+                <a class="deco-none" [routerLink]="['dinero/transfer/', 'banco']">
+                    {{ dinero.banco | currency: "€" }}
+                </a>
             </h1>
         </div>
     </div>
-
+    
+    
     <div class="row">
         <div class="col-md-8">
             <h2>
@@ -20,8 +24,11 @@
         </div>
         <div class="col-md-4">
             <h1>
-            {{ dinero.caja | currency: "€" }}
+                <a class="deco-none" [routerLink]="['dinero/transfer/', 'caja']">
+                    {{ dinero.caja | currency: "€" }}
+                </a>
             </h1>
         </div>
     </div>
+    
 </div>

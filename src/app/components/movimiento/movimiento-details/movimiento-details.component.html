@@ -1,0 +1,30 @@
+<div class="row sticky-top tex-center pb-2">
+    <div class="col-6 bg-primary text-white w-100 pt-1 pb-1">
+        <a class="deco-none" [routerLink]="['../']">Regresar</a>
+    </div>
+    <div class="col-6 bg-danger text-white w-100 pt-1 pb-1">
+        <a class="deco-none" (click)="deleteMovimiento()">Eliminar movimiento</a>
+    </div>
+</div>
+<div class="p-3" *ngIf="movimiento">
+    <div class="row">
+        <div class="col-10 mx-auto ">
+            <div class="pt-1 pb-1" >
+                <mat-card>
+                    <mat-card-title>
+                        {{movimiento.concepto}}
+                    </mat-card-title>
+                    <mat-card-title>
+                        {{movimiento.valor}}
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        {{movimiento.tipo}} en {{movimiento.cajaBanco}}
+                    </mat-card-subtitle>
+                    <mat-card-content>
+                        {{movimiento.fecha | date}}
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

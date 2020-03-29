@@ -80,4 +80,10 @@ export class ListarMovimientosComponent implements OnInit {
     );
   }
 
+  deleteMovimiento(id:String){
+    this.service.deleteMovimiento(id).subscribe(
+      data => console.log(data)
+    )
+  }
+
 }

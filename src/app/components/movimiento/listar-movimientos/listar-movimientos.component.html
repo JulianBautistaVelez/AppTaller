@@ -57,40 +57,48 @@
                 <!--- Note that these columns can be defined in any order.
                       The actual rendered columns are set as a property on the row definition" -->
         
-                <!-- Position Column -->
                 <ng-container matColumnDef="Fecha">
                   <th mat-header-cell *matHeaderCellDef>Fecha</th>
                   <td mat-cell *matCellDef="let movimiento">
-                    {{ movimiento.fecha | date: "short" }}
+                    <a class="deco-none" 
+                      [routerLink]="['./details', movimiento.movimientoId]">
+                      {{ movimiento.fecha | date: "short" }}
+                    </a>
                   </td>
                   <td mat-footer-cell *matFooterCellDef></td>
                 </ng-container>
         
-                <!-- Weight Column -->
                 <ng-container matColumnDef="Concepto">
                   <th mat-header-cell *matHeaderCellDef>Concepto</th>
                   <td mat-cell *matCellDef="let movimiento">
-                    {{ movimiento.concepto }}
+                    <a class="deco-none" 
+                      [routerLink]="['./details', movimiento.movimientoId]">
+                      {{ movimiento.concepto }}
+                    </a>
                   </td>
                   <td mat-footer-cell *matFooterCellDef>Total</td>
                 </ng-container>
         
-                <!-- Symbol Column -->
                 <ng-container matColumnDef="Valor">
                   <th mat-header-cell *matHeaderCellDef>Cantidad</th>
                   <td mat-cell *matCellDef="let movimiento">
-                    {{ movimiento.valor | currency: "€" }}
+                    <a class="deco-none" 
+                      [routerLink]="['./details', movimiento.movimientoId]">
+                      {{ movimiento.valor | currency: "€" }}
+                    </a>
                   </td>
                   <td mat-footer-cell *matFooterCellDef>
                     {{ getTotalCost() | currency: "€" }}
                   </td>
                 </ng-container>
         
-                <!--Columna destino-->
                 <ng-container matColumnDef="Origen/Destino">
                   <th mat-header-cell *matHeaderCellDef>Caja/Banco</th>
                   <td mat-cell *matCellDef="let movimiento">
-                    {{ movimiento.cajaBanco }}
+                    <a class="deco-none" 
+                      [routerLink]="['./details', movimiento.movimientoId]">
+                      {{ movimiento.cajaBanco }}
+                    </a>
                   </td>
                   <td mat-footer-cell *matFooterCellDef></td>
                 </ng-container>

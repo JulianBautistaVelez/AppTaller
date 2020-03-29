@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DineroService } from 'src/app/services/dinero/dinero.service';
-import { Dinero } from 'src/app/model/dinero/Dinero';
+import { MovimientoClass } from 'src/app/model/movimiento/MovimientoClass';
+import { DineroClass } from 'src/app/model/dinero/DineroClass';
 
 @Component({
   selector: 'app-ver-dinero',
@@ -9,7 +10,8 @@ import { Dinero } from 'src/app/model/dinero/Dinero';
 })
 export class VerDineroComponent implements OnInit {
 
-  dinero:Dinero;
+  dinero:DineroClass;
+  movimientos:MovimientoClass;
 
   constructor(private service:DineroService) { }
 
@@ -18,7 +20,12 @@ export class VerDineroComponent implements OnInit {
   }
 
   getDinero(){
-    this.service.getDinero().subscribe((dineroResponse:Dinero) => this.dinero = dineroResponse);
+    this.service.getDinero().subscribe((dineroResponse:DineroClass) => this.dinero = dineroResponse);
+  }
+
+  transferDinero(){
+    
+    // this.service.get
   }
 
 }

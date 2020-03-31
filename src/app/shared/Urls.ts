@@ -1,5 +1,5 @@
 export enum Urls {
-    baseUrl = "http://localhost:8080/",
+    baseUrl = "http://localhost:8080",
 
     /* DINERO */
     dinero = "/dinero/",
@@ -25,7 +25,7 @@ export enum Urls {
     getByQuery = "search",
 
     /* MOVIMIENTO */
-    movimiento = "movimientos/",
+    movimiento = "/movimientos/",
     getRangeOfTime ="rot",
     getGastos = "gasto/",
     getIngresos = "ingreso/",

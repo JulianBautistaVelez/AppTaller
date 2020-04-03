@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { gastosFrecuentes, ingresosFrecuentes } from 'src/app/shared/ConceptosFrecuentes';
+import { gastosFrecuentes, ingresosFrecuentes } from 'src/app/model/shared/ConceptosFrecuentes';
 import { MovimientoService } from 'src/app/services/movimiento/movimiento.service';
 import { MovimientoClass } from 'src/app/model/movimiento/MovimientoClass';
 import { ActivatedRoute, Router } from '@angular/router';

@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Urls } from 'src/app/shared/Urls';
+import { Urls } from 'src/app/model/shared/Urls';
 import { Observable } from 'rxjs';
 import { MovimientoClass } from 'src/app/model/movimiento/MovimientoClass';
 import { RangoFechaClass } from 'src/app/model/shared/RangoFechaClass';
-import { TipoMovimiento } from 'src/app/shared/TipoMovimiento';
+import { TipoMovimiento } from 'src/app/model/shared/TipoMovimiento';
 
 
 @Injectable({

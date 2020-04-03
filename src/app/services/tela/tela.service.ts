@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Urls } from 'src/app/shared/Urls';
+import { Urls } from 'src/app/model/shared/Urls';
 import { TelaClass } from 'src/app/model/tela/TelaClass';
 import { Observable } from 'rxjs';
 

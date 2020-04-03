@@ -1,4 +1,4 @@
-import { TipoMovimiento } from 'src/app/shared/TipoMovimiento';
+import { TipoMovimiento } from 'src/app/model/shared/TipoMovimiento';
 
 export class MovimientoClass{
     concepto:String;

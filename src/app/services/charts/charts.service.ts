@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Urls } from 'src/app/shared/Urls';
+import { Urls } from 'src/app/model/shared/Urls';
 import { Observable } from 'rxjs';
 import { LineChartClass } from 'src/app/model/charts/LineChartClass';
 import { RangoFechaClass } from 'src/app/model/shared/RangoFechaClass';

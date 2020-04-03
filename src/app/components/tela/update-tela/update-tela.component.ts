@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TelaClass } from 'src/app/model/tela/TelaClass';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { tiposTela } from 'src/app/shared/TiposTela';
-import { proveedoresTela } from 'src/app/shared/ProveedoresTela';
+import { tiposTela } from 'src/app/model/shared/TiposTela';
+import { proveedoresTela } from 'src/app/model/shared/ProveedoresTela';
 import { TelaService } from 'src/app/services/tela/tela.service';
 import { ActivatedRoute, Router } from '@angular/router';
 

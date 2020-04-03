@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MovimientoService } from 'src/app/services/movimiento/movimiento.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MovimientoClass } from 'src/app/model/movimiento/MovimientoClass';
-import { TipoMovimiento } from 'src/app/shared/TipoMovimiento';
+import { TipoMovimiento } from 'src/app/model/shared/TipoMovimiento';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

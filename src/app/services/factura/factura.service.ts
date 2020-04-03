@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Urls } from 'src/app/shared/Urls';
+import { Urls } from 'src/app/model/shared/Urls';
 import { FacturaClass } from 'src/app/model/factura/FacturaClass';
 import { Observable } from 'rxjs';
 import { RangoFechaClass } from 'src/app/model/shared/RangoFechaClass';

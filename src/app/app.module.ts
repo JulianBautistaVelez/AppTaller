@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +39,9 @@ import { LiquidezChartComponent } from './components/charts/liquidez-chart/liqui
 import { GastosIngresosChartComponent } from './components/charts/gastos-ingresos-chart/gastos-ingresos-chart.component';
 import { TransferDineroComponent } from './components/dinero/transfer-dinero/transfer-dinero.component';
 import { MovimientoDetailsComponent } from './components/movimiento/movimiento-details/movimiento-details.component';
+import { LoginComponent } from './components/login/login.component';
+import { JwtInterceptor } from './helpers/jwt-interceptor';
+import { ErrorInterceptor } from './helpers/error-interceptor';
 
 
 @NgModule({
@@ -62,6 +66,7 @@ import { MovimientoDetailsComponent } from './components/movimiento/movimiento-d
     GastosIngresosChartComponent,
     TransferDineroComponent,
     MovimientoDetailsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,7 +88,10 @@ import { MovimientoDetailsComponent } from './components/movimiento/movimiento-d
     MatDatepickerModule,
     MatNativeDateModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

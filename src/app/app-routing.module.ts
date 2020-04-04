@@ -15,10 +15,14 @@ import { ListarTelasComponent } from './components/tela/listar-telas/listar-tela
 import { UpdateTelaComponent } from './components/tela/update-tela/update-tela.component';
 import { TransferDineroComponent } from './components/dinero/transfer-dinero/transfer-dinero.component';
 import { MovimientoDetailsComponent } from './components/movimiento/movimiento-details/movimiento-details.component';
+import { LoginComponent } from './components/login/login.component';
+
+import { AuthenticationGuard } from "./helpers/AuthenticationGuard"
 
 
 const routes: Routes = [
-  { path: "", component: PagInicialComponent},
+  { path: "", component: PagInicialComponent, canActivate:[AuthenticationGuard]},
+  { path: "login", component: LoginComponent},
   { path: 'dinero/transfer/:origen', component: TransferDineroComponent},
   { path: 'facturas', component: ListarFacturasComponent},
   { path: 'facturas/insert', component: InsertFacturaComponent},

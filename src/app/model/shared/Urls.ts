@@ -1,6 +1,9 @@
 export enum Urls {
     baseUrl = "http://localhost:8080",
 
+    /* USUARIO */
+    login = "/login",
+
     /* DINERO */
     dinero = "/dinero/",
     getDineroActual = "get-dinero-actual",

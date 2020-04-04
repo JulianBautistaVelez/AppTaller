@@ -1,0 +1,22 @@
+<div class="col-md-6 offset-md-3 mt-5">
+    <div class="card">
+        <h4 class="card-header">Login Gestión de taller</h4>
+        <div class="card-body">
+            <form [formGroup]="loginForm" >
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" matInput formControlName="usuario" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" matInput formControlName="password" class="form-control" />
+                </div>
+                <button [disabled]="loading || loginForm.invalid" (click)="submitHandler()"  class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
+        </div>
+    </div>
+</div>

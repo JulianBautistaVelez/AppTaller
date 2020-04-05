@@ -27,10 +27,11 @@ export class AuthenticationService {
 
   login(usuario:Usuario){
     var endPoint = this.baseUrl  + Urls.login;
-    let hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post<HttpEvent<any>>(endPoint, usuario, { headers: hdrs, observe: 'response' }).pipe(
+    //let hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<HttpEvent<any>>(endPoint, usuario, { observe: 'response' }).pipe(
       map(
         (response:HttpResponse<any>)=> {
+          console.log(response);
           //TODO guardar datos de usuario y token en un sitio mas seguro que localStorage
           localStorage.setItem('currentUser', JSON.stringify(response.headers.get('usuarioId')));
           localStorage.setItem('JWST', JSON.stringify(response.headers.get('token')));

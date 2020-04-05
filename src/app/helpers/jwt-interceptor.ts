@@ -11,19 +11,22 @@ export class JwtInterceptor implements HttpInterceptor{
     intercept(req:HttpRequest<any>, next:HttpHandler):Observable<HttpEvent<any>> {
         let currentUser = this.authenticationService.currentUserValue;
         let authorizationToken;
-        if( localStorage.getItem('JWST') != null){
+        let headers;
+        if(currentUser && localStorage.getItem('JWST') != null){
             authorizationToken = "Bearer" + localStorage.getItem('JWST').slice(1,-1);
-        } else authorizationToken = "Bearer";
-        
-        
-        if(currentUser && localStorage.getItem('JWST')){
-            req = req.clone({
-                setHeaders:{
-                    Authorization: authorizationToken
-                }
-            });
-            console.log(req)
+             headers={
+                'Content-Type': 'application/json',
+                'Authorization': authorizationToken
+            }
+        } else headers={
+            'Content-Type': 'application/json'
         }
+        
+        req = req.clone({
+            setHeaders:headers
+        });
+
+        console.log(req);
         return next.handle(req);
     }
 }

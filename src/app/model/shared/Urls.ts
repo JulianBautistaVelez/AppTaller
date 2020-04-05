@@ -1,6 +1,6 @@
 export enum Urls {
-    //baseUrl = "http://localhost:8080",
-    baseUrl = "/api",
+    baseUrl = "http://localhost:8080",
+    //baseUrl = "/api",
 
     /* USUARIO */
     login = "/login",

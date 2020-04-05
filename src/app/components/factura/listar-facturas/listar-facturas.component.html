@@ -8,7 +8,7 @@
       <div class="container">
         <div class="row">
           <form [formGroup]="datosFecha">
-            <div class="col-sm-4">
+            <div class="col-8 mx-auto">
               <mat-form-field>
                 <input
                   matInput
@@ -24,7 +24,7 @@
                 <mat-datepicker touchUi #pickerInicio></mat-datepicker>
               </mat-form-field>
             </div>
-            <div class="col-sm-4">
+            <div class="col-8 mx-auto">
               <mat-form-field>
                 <input
                   matInput
@@ -41,7 +41,7 @@
               </mat-form-field>
             </div>
           </form>
-          <div class="col-md-8">
+          <div class="col-12 mx-auto">
             <!----------------------------------------------------------------------------------->
             <table class="text-center" mat-table [dataSource]="tableData" class="mat-elevation-z8">
               

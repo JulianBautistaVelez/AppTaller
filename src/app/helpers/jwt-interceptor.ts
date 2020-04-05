@@ -26,7 +26,6 @@ export class JwtInterceptor implements HttpInterceptor{
             setHeaders:headers
         });
 
-        console.log(req);
         return next.handle(req);
     }
 }

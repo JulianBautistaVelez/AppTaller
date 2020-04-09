@@ -27,7 +27,6 @@ export class AuthenticationService {
 
   login(usuario:Usuario){
     var endPoint = this.baseUrl  + Urls.login;
-    //let hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<HttpEvent<any>>(endPoint, usuario, { observe: 'response' }).pipe(
       map(
         (response:HttpResponse<any>)=> {

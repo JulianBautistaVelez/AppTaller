@@ -19,13 +19,13 @@ export class JwtInterceptor implements HttpInterceptor{
                 'Authorization': authorizationToken
             }
         } else headers={
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         }
         
         req = req.clone({
             setHeaders:headers
         });
-
+        console.log(req);
         return next.handle(req);
     }
 }

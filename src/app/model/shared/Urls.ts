@@ -7,13 +7,13 @@ export enum Urls {
 
     /* DINERO */
     dinero = "/dinero/",
-    getDineroActual = "get-dinero-actual",
+    getDineroActual = "get/actual/",
 
     /* CHARTS */
     charts = "/informacion/",
-    getLineChartData = "get-liquidez",
-    getGastosPieChartData = "get-gastos",
-    getIngresosPieChartData = "get-ingresos",
+    getLineChartData = "get/liquidez/",
+    getGastosPieChartData = "get/gastos/",
+    getIngresosPieChartData = "get/ingresos/",
 
     /*****************************************************************************************/
     /* COMPARTEN ENDPOINTS */

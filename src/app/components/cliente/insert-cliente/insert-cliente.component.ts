@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClienteClass } from 'src/app/model/cliente/ClienteClass';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ClienteService } from 'src/app/services/cliente/cliente.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-insert-cliente',
@@ -15,7 +16,8 @@ export class InsertClienteComponent implements OnInit {
 
   constructor(
     private service:ClienteService,
-    private fb:FormBuilder
+    private fb:FormBuilder,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -49,7 +51,7 @@ export class InsertClienteComponent implements OnInit {
   submitHandler(myForm:FormGroup){
     this.cliente = new ClienteClass(this.form.value);
     this.service.insertCliente(this.cliente).subscribe(
-      data => console.log(data)
+      data => {this.router.navigate(['../clientes']);}
     );
     this.form.reset();
   }

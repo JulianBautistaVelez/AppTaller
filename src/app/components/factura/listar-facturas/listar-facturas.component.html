@@ -7,41 +7,40 @@
   <div *ngIf="tableData">
       <div class="container">
         <div class="row">
-          <form [formGroup]="datosFecha">
-            <div class="col-8 mx-auto">
-              <mat-form-field>
-                <input
-                  matInput
-                  [matDatepicker]="pickerInicio"
-                  formControlName="fechaInicio"
-                  placeholder="Fecha de inicio"
-                  (dateChange)="cambioFechaInicio()"
-                />
-                <mat-datepicker-toggle
-                  matSuffix
-                  [for]="pickerInicio"
-                ></mat-datepicker-toggle>
-                <mat-datepicker touchUi #pickerInicio></mat-datepicker>
-              </mat-form-field>
-            </div>
-            <div class="col-8 mx-auto">
-              <mat-form-field>
-                <input
-                  matInput
-                  [matDatepicker]="pickerFinal"
-                  formControlName="fechaFin"
-                  placeholder="Fecha de final"
-                  (dateChange)="cambioFechaFinal()"
-                />
-                <mat-datepicker-toggle
-                  matSuffix
-                  [for]="pickerFinal"
-                ></mat-datepicker-toggle>
-                <mat-datepicker touchUi #pickerFinal></mat-datepicker>
-              </mat-form-field>
-            </div>
+          <form [formGroup]="datosFecha" class="col-xs-8 col-md-4 mx-auto">
+            
+            <mat-form-field>
+              <input
+                matInput
+                [matDatepicker]="pickerInicio"
+                formControlName="fechaInicio"
+                placeholder="Fecha de inicio"
+                (dateChange)="cambioFechaInicio()"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="pickerInicio"
+              ></mat-datepicker-toggle>
+              <mat-datepicker touchUi #pickerInicio></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+                matInput
+                [matDatepicker]="pickerFinal"
+                formControlName="fechaFin"
+                placeholder="Fecha de final"
+                (dateChange)="cambioFechaFinal()"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="pickerFinal"
+              ></mat-datepicker-toggle>
+              <mat-datepicker touchUi #pickerFinal></mat-datepicker>
+            </mat-form-field>
+
           </form>
-          <div class="col-12 mx-auto">
+          <div class="col-xs-12 col-md-8">
             <!----------------------------------------------------------------------------------->
             <table class="text-center" mat-table [dataSource]="tableData" class="mat-elevation-z8">
               

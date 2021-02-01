@@ -1,42 +1,52 @@
-<form class="pt-3" [formGroup]="form"> 
-    <div class="row text-center">
-      
-      <div class="col-6 mx-auto">
-        <h2>{{tipoMovimiento|uppercase}}</h2>
-      </div>
-      
-      <div class="col-8 mx-auto">
-        <mat-form-field>
-            <input matInput formControlName="valor" type="currency" placeholder="Cantidad (max 2 decimales)">
-        </mat-form-field>
-      </div>
-  
-      <div class="col-8 mx-auto">
-        <mat-form-field>
-          
-          <input *ngIf="tipoMovimiento === 'ingreso'" matInput formControlName="concepto" placeholder="Concepto" list="ingresos_frecuentes">
-          <datalist  id="ingresos_frecuentes">
-              <option *ngFor="let concepto of ingresos" value="{{concepto}}">
-          </datalist>
+<div class="row sticky-top tex-center">
+  <div *ngIf="tipoMovimiento === 'ingreso'" class="col-12 bg-primary text-white w-100 pt-1 pb-1">
+    <a class="deco-none">Insertando ingreso</a>
+  </div>
+  <div *ngIf="tipoMovimiento === 'gasto'" class="col-12 bg-danger text-white w-100 pt-1 pb-1">
+    <a class="deco-none">Insertando gasto</a>
+  </div>
+</div>
 
-          <input *ngIf="tipoMovimiento === 'gasto'" matInput formControlName="concepto" placeholder="Concepto" list="gastos_frecuentes">
-          <datalist id="gastos_frecuentes">
-              <option *ngFor="let concepto of gastos" value="{{concepto}}">
-          </datalist>
-            
-        </mat-form-field>
-      </div>
-  
-      <div class="col-8 mx-auto">
-        <mat-button-toggle-group class="mx-auto" formControlName="cajaBanco" >
-          <mat-button-toggle  value="caja">Caja</mat-button-toggle>
-          <mat-button-toggle  value="banco">Banco</mat-button-toggle>
-        </mat-button-toggle-group>
-      </div>
-  
-      <div class="col-8 mt-2 mx-auto">
-        <button mat-raised-button [disabled]="form.invalid"  color="primary" (click)="submitHandler(form)">Confirmar</button>
-      </div>
-  
+<form class="pt-3" [formGroup]="form"> 
+
+  <div class="row text-center">
+    
+    <div class="col-6 mx-auto">
+      <h2>{{tipoMovimiento|uppercase}}</h2>
     </div>
-  </form>
+    
+    <div class="col-8 mx-auto">
+      <mat-form-field>
+          <input matInput formControlName="valor" type="currency" placeholder="Cantidad (max 2 decimales)">
+      </mat-form-field>
+    </div>
+
+    <div class="col-8 mx-auto">
+      <mat-form-field>
+        
+        <input *ngIf="tipoMovimiento === 'ingreso'" matInput formControlName="concepto" placeholder="Concepto" list="ingresos_frecuentes">
+        <datalist  id="ingresos_frecuentes">
+            <option *ngFor="let concepto of ingresos" value="{{concepto}}">
+        </datalist>
+
+        <input *ngIf="tipoMovimiento === 'gasto'" matInput formControlName="concepto" placeholder="Concepto" list="gastos_frecuentes">
+        <datalist id="gastos_frecuentes">
+            <option *ngFor="let concepto of gastos" value="{{concepto}}">
+        </datalist>
+          
+      </mat-form-field>
+    </div>
+
+    <div class="col-8 mx-auto">
+      <mat-button-toggle-group class="mx-auto" formControlName="cajaBanco" >
+        <mat-button-toggle  value="caja">Caja</mat-button-toggle>
+        <mat-button-toggle  value="banco">Banco</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <div class="col-8 mt-2 mx-auto">
+      <button mat-raised-button [disabled]="form.invalid"  color="primary" (click)="submitHandler(form)">Confirmar</button>
+    </div>
+
+  </div>
+</form>

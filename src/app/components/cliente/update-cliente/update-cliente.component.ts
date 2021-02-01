@@ -66,7 +66,7 @@ export class UpdateClienteComponent implements OnInit {
     this.service.updateCliente(this.cliente, this.id).subscribe(
       data => {
         console.log(data);
-        this.router.navigate(['../facturas']);
+        this.router.navigate(['../clientes']);
       }
     );
   }

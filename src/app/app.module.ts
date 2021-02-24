@@ -42,6 +42,7 @@ import { MovimientoDetailsComponent } from './components/movimiento/movimiento-d
 import { LoginComponent } from './components/login/login.component';
 import { JwtInterceptor } from './helpers/jwt-interceptor';
 import { ErrorInterceptor } from './helpers/error-interceptor';
+import { BotonComponent } from './components/boton/boton.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { ErrorInterceptor } from './helpers/error-interceptor';
     TransferDineroComponent,
     MovimientoDetailsComponent,
     LoginComponent,
+    BotonComponent,
   ],
   imports: [
     BrowserModule,

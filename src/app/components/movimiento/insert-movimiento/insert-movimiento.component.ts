@@ -47,6 +47,8 @@ export class InsertMovimientoComponent implements OnInit {
   get concepto(){return this.form.get('concepto');}
   get cajaBanco(){return this.form.get('cajaBanco');}
   get tipo(){return this.form.get('tipo');}
+  get deducible(){return this.form.get('deducible');}
+  get descripcion(){return this.form.get('descripcion');}
 
   submitHandler(form){
     this.movimiento = new MovimientoClass(this.form.value);

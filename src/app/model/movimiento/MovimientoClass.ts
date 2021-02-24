@@ -7,6 +7,8 @@ export class MovimientoClass{
     cajaBanco:String;
     movimientoId:String;
     fecha:Date;
+    deducible:Boolean;
+    descripcion:String;
     public constructor(init?: Partial<MovimientoClass>){
         Object.assign(this , init);
     }

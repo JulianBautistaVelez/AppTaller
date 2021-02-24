@@ -12,9 +12,11 @@
                     <input type="password" matInput formControlName="password" class="form-control" />
                 </div>
                 <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
-                <div class="col-12 bg-primary text-white w-100 pt-1 pb-1">
-                    <a class="deco-none" (click)="submitHandler()">Login</a>
-                </div>
+                <a class="deco-none" (click)="submitHandler()">
+                    <div class="col-12 bg-primary text-white w-100 pt-1 pb-1">
+                        Login
+                    </div>
+                </a>
             </form>
         </div>
     </div>

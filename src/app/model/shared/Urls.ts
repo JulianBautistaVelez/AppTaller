@@ -1,5 +1,5 @@
 export enum Urls {
-    baseUrl = "http://YOURBACKENDURL/api",
+    baseUrl = "http://localhost:8080/api",
 
 
     /* USUARIO */

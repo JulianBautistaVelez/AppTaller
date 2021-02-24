@@ -1,16 +1,20 @@
 <div class="row sticky-top tex-center">
-    <div class="col-4 bg-danger text-white w-100 pt-1 pb-1">
-        <a class="deco-none" (click)="deleteFactura()">Eliminar</a>
-    </div>
-    <div class="col-4 bg-warning text-white w-100 pt-1 pb-1">
-        <a class="deco-none" [title]="factura.nombre +' update'" 
-        [routerLink]="['/facturas/edit/', factura.facturaId]">
-            Editar
-        </a>
-    </div>
-    <div class="col-4 bg-success text-white w-100 pt-1 pb-1">
-        <a class="deco-none" (click)="printScreen()">Imprimir</a>
-    </div>
+    <a class="deco-none" (click)="deleteFactura()">
+        <div class="col-4 bg-danger text-white w-100 pt-1 pb-1">
+            Eliminar
+        </div>
+    </a>
+    <a class="deco-none" [title]="factura.nombre +' update'" 
+        [routerLink]="['/facturas/edit/', factura.facturaId]">   
+        <div class="col-4 bg-warning text-white w-100 pt-1 pb-1">
+                Editar
+        </div>
+    </a>
+    <a class="deco-none" (click)="printScreen()">
+        <div class="col-4 bg-success text-white w-100 pt-1 pb-1">
+            Imprimir
+        </div>
+    </a>    
 </div>
 <div *ngIf="factura" class="container">
     <div id="contentToPrint">

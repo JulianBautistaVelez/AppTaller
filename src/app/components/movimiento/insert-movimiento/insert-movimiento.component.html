@@ -38,6 +38,16 @@
     </div>
 
     <div class="col-8 mx-auto">
+      <mat-form-field>
+        <input matInput formControlName="descripcion" placeholder="Descripcion" />
+      </mat-form-field>
+    </div>
+
+    <div class="col-8 mx-auto" *ngIf="tipoMovimiento== 'gasto'">
+        <mat-checkbox (change)="setDeducible($event.checked)">Es deducible</mat-checkbox>
+    </div>
+
+    <div class="col-8 mx-auto">
       <mat-button-toggle-group class="mx-auto" formControlName="cajaBanco" >
         <mat-button-toggle  value="caja">Caja</mat-button-toggle>
         <mat-button-toggle  value="banco">Banco</mat-button-toggle>

@@ -13,16 +13,20 @@
                 <mat-card>
                     <mat-card-title>
                         {{movimiento.concepto}}
+                        <p>
+                            {{movimiento.valor | currency}}
+                        </p>
                     </mat-card-title>
-                    <mat-card-title>
-                        {{movimiento.valor}}
-                    </mat-card-title>
-                    <mat-card-subtitle>
-                        {{movimiento.tipo}} en {{movimiento.cajaBanco}}
-                    </mat-card-subtitle>
                     <mat-card-content>
-                        {{movimiento.fecha | date}}
+                        <p *ngIf="movimiento.deducible"> {{iva | currency}} son deducibles </p>
+                        {{movimiento.descripcion}} 
+                        <p> 
+                            Realizado el {{movimiento.fecha | date}}
+                        </p>
                     </mat-card-content>
+                    <mat-card-subtitle>
+                        {{movimiento.tipo}}  en {{movimiento.cajaBanco}}
+                    </mat-card-subtitle>
                 </mat-card>
             </div>
         </div>

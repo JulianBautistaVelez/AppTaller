@@ -38,7 +38,9 @@ export class InsertMovimientoComponent implements OnInit {
       cajaBanco:[null,[
         Validators.required
       ]],
-      tipo:String
+      tipo:String,
+      deducible:false,
+      descripcion:''
     })
     this.form.controls['tipo'].setValue(this.tipoMovimiento);
   }
@@ -49,6 +51,14 @@ export class InsertMovimientoComponent implements OnInit {
   get tipo(){return this.form.get('tipo');}
   get deducible(){return this.form.get('deducible');}
   get descripcion(){return this.form.get('descripcion');}
+
+  setDeducible(isChecked: boolean) {
+    if (isChecked) {
+      this.form.controls['deducible'].setValue(true);
+    } else {
+      this.form.controls['deducible'].setValue(false);
+    }
+  }
 
   submitHandler(form){
     this.movimiento = new MovimientoClass(this.form.value);

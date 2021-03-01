@@ -12,6 +12,7 @@ export class MovimientoDetailsComponent implements OnInit {
 
   movimiento:MovimientoClass;
   id:String;
+  iva:Number;
 
   constructor(
     private route:ActivatedRoute,
@@ -36,6 +37,7 @@ export class MovimientoDetailsComponent implements OnInit {
     this.service.getMovimientoById(this.id).subscribe(
       (data:MovimientoClass) => {
         this.movimiento = data;
+        this.iva = data.valor.valueOf() * 0.21;
       }
     )
   }

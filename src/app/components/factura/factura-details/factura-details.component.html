@@ -1,20 +1,26 @@
 <div class="row sticky-top tex-center">
-    <a class="deco-none" (click)="deleteFactura()">
-        <div class="col-4 bg-danger text-white w-100 pt-1 pb-1">
-            Eliminar
-        </div>
-    </a>
-    <a class="deco-none" [title]="factura.nombre +' update'" 
+    <div class="col-4 bg-danger">
+        <a class="deco-none" (click)="deleteFactura()">
+            <div class="text-white w-100 pt-1 pb-1">
+                Eliminar
+            </div>
+        </a>
+    </div>
+    <div class="col-4 bg-warning ">
+        <a class="deco-none"
         [routerLink]="['/facturas/edit/', factura.facturaId]">   
-        <div class="col-4 bg-warning text-white w-100 pt-1 pb-1">
-                Editar
-        </div>
-    </a>
-    <a class="deco-none" (click)="printScreen()">
-        <div class="col-4 bg-success text-white w-100 pt-1 pb-1">
-            Imprimir
-        </div>
-    </a>    
+            <div class="text-white w-100 pt-1 pb-1">
+                    Editar
+            </div>
+        </a>
+    </div>
+    <div class="col-4 bg-success">
+        <a class="deco-none" (click)="printScreen()">
+            <div class="text-white w-100 pt-1 pb-1">
+                Imprimir
+            </div>
+        </a> 
+    </div>   
 </div>
 <div *ngIf="factura" class="container">
     <div id="contentToPrint">
@@ -36,23 +42,23 @@
                     </tr>
                     <tr>
                         <th scope="row">Nombre: </th>
-                        <td>Nombre de Prueba </td>
+                        <td>{{env.nombre}} </td>
                     </tr>
                     <tr>
                         <th scope="row">Domicilio: </th>
-                        <td>Calle de Prueba 12 bajo</td>
+                        <td>{{env.domicilio}}</td>
                     </tr>
                     <tr>
                         <th scope="row">C.P/Provinicia: </th>
-                        <td>46000/Valencia</td>
+                        <td>{{env.cpProvincia}}</td>
                     </tr>
                     <tr>
                         <th scope="row">N.I.F. : </th>
-                        <td>2222222E</td>
+                        <td>{{env.nif}}</td>
                     </tr>
                     <tr>
                         <th scope="row">Teléfono: </th>
-                        <td>111 11 11 11</td>
+                        <td>{{env.telefono}}</td>
                     </tr>
                     </tbody>
                 </table>
@@ -67,15 +73,15 @@
                         <th scope="row">Cliente: </th>
                         <td>{{factura.nombre}}</td>
                     </tr>
-                    <tr>
+                    <tr *ngIf="factura.nif">
                         <th scope="row">N.I.F. : </th>
                         <td>{{factura.nif}}</td>
                     </tr>
-                    <tr>
+                    <tr *ngIf="factura.direccion">
                         <th scope="row">Domicilio: </th>
                         <td>{{factura.direccion}} </td>
                     </tr>
-                    <tr>
+                    <tr *ngIf="factura.cpProvincia">
                         <th scope="row">C.P./Provinicia: </th>
                         <td>{{factura.cpProvincia}}</td>
                     </tr>

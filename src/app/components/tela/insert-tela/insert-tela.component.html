@@ -1,9 +1,17 @@
 <div class="row sticky-top tex-center pb-2">
-    <div class="col-6 bg-danger text-white w-100 pt-1 pb-1">
-        <a class="deco-none" (click)="clearForm()">Limpiar formulario</a>
+    <div class="col-6 bg-danger">
+        <a class="deco-none" (click)="clearForm()">
+          <div  class="text-white w-100 pt-1 pb-1">
+            Limpiar formulario
+          </div>
+        </a>
     </div>
-    <div class="col-6 bg-primary text-white w-100 pt-1 pb-1">
-        <a *ngIf="form.valid" class="deco-none" (click)="submitHandler()">Validar</a>
+    <div class="col-6 bg-primary">
+        <a *ngIf="form.valid" class="deco-none" (click)="submitHandler()">
+          <div  class="text-white w-100 pt-1 pb-1">
+            Insertar tela
+          </div>
+        </a>
     </div>
 </div>
 

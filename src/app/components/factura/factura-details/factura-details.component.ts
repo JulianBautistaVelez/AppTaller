@@ -2,8 +2,10 @@ import { Component, OnInit, ElementRef , ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FacturaClass } from 'src/app/model/factura/FacturaClass';
 import { FacturaService } from 'src/app/services/factura/factura.service';
+import { environment } from 'src/environments/environment';
 
 import * as html2pdf from 'html2pdf.js';
+import { CoreEnvironment } from '@angular/compiler/src/compiler_facade_interface';
 
 @Component({
   selector: 'app-factura-details',
@@ -14,6 +16,8 @@ export class FacturaDetailsComponent implements OnInit {
 
   factura:FacturaClass;
   id:String;
+
+  env = environment;
 
   constructor(
     private route:ActivatedRoute, 

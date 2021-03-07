@@ -1,9 +1,17 @@
 <div class="row sticky-top tex-center pb-2">
-    <div class="col-6 bg-danger text-white w-100 pt-1 pb-1">
-        <a class="deco-none" (click)="deleteTela()">Eliminar tela</a>
+    <div class="col-6 bg-danger">
+        <a class="deco-none" (click)="deleteTela()">
+          <div  class="text-white w-100 pt-1 pb-1">
+            Eliminar tela
+          </div>
+        </a>
     </div>
-    <div class="col-6 bg-primary text-white w-100 pt-1 pb-1">
-        <a *ngIf="form.valid" class="deco-none" (click)="updateTela()">Actualizar</a>
+    <div class="col-6 bg-primary">
+        <a *ngIf="form.valid" class="deco-none" (click)="updateTela()">
+          <div  class="text-white w-100 pt-1 pb-1">
+            Actualizar tela
+          </div>
+        </a>
     </div>
 </div>
 
@@ -16,26 +24,16 @@
         
         <div class="col-8 mx-auto">
             <mat-form-field>
-                <input
-                matInput
-                formControlName="nombre"
-                type="text"
-                placeholder="Nombre"
-                />
-                <mat-error *ngIf="nombre.invalid && nombre.touched"
-                >Es obligatorio un nombre</mat-error
-                >
+                <input matInput formControlName="nombre" type="text" placeholder="Nombre" />
+                <mat-error *ngIf="nombre.invalid && nombre.touched">
+                    Es obligatorio un nombre
+                </mat-error>
             </mat-form-field>
         </div>
 
         <div class="col-8 mx-auto">
             <mat-form-field>
-                <input
-                matInput
-                formControlName="tipo"
-                placeholder="Tipo"
-                list="tipos"
-                />
+                <input matInput formControlName="tipo" placeholder="Tipo" list="tipos"/>
                 <datalist id="tipos">
                     <option *ngFor="let tipoTela of tiposTela" value="{{tipoTela}}"></option>
                 </datalist>
@@ -44,12 +42,7 @@
 
         <div class="col-8 mx-auto">
             <mat-form-field>
-                <input
-                matInput
-                formControlName="proveedor"
-                placeholder="Proveedor"
-                list="proveedores"
-                />
+                <input matInput formControlName="proveedor" placeholder="Proveedor" list="proveedores"/>
                 <datalist id="proveedores">
                     <option *ngFor="let proveedor of proveedoresTela" value="{{proveedor}}"></option>
                 </datalist>
@@ -58,39 +51,25 @@
 
         <div class="col-8 mx-auto">
             <mat-form-field>
-                <input
-                matInput
-                formControlName="precioProveedor"
-                type="currency"
-                placeholder="Precio en el proveedor"
-                />
-                <mat-error *ngIf="precioProveedor.invalid && precioProveedor.touched"
-                >2 decimales como máximo</mat-error
-                >
+                <input matInput formControlName="precioProveedor" type="currency" placeholder="Precio en el proveedor"/>
+                <mat-error *ngIf="precioProveedor.invalid && precioProveedor.touched">
+                    2 decimales como máximo
+                    </mat-error>
             </mat-form-field>
         </div>
 
         <div class="col-8 mx-auto">
             <mat-form-field>
-                <input
-                matInput
-                formControlName="precioCliente"
-                type="currency"
-                placeholder="PVP"
-                />
-                <mat-error *ngIf="precioCliente.invalid && precioCliente.touched"
-                >2 decimales como máximo</mat-error
-                >
+                <input matInput formControlName="precioCliente" type="currency" placeholder="PVP"/>
+                <mat-error *ngIf="precioCliente.invalid && precioCliente.touched">
+                    2 decimales como máximo
+                </mat-error>
             </mat-form-field>
         </div>
 
         <div class="col-8 mx-auto">
             <mat-form-field>
-                <textarea
-                matInput
-                formControlName="comentarios"
-                placeholder="Comentarios"
-                ></textarea>
+                <textarea matInput formControlName="comentarios" placeholder="Comentarios" ></textarea>
             </mat-form-field>
         </div>
 
